@@ -97,10 +97,8 @@ http://localhost:80/predict
 
 # AZURE-CICD-Deployment-with-Github-Actions
 
-## Save pass:
-
-s3cEZKH5yytiVnJ3h+eI3qhhzf9q1vNwEi6+q+WGdd+ACRCZ7JD6
-
+Save the password generated under Access keys in your container registry somewhere safe.
+You can only see the password after enabling Admin user in Access keys.
 
 ## Run from terminal:
 
