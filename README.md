@@ -1,7 +1,19 @@
-# Chicken_Disease_Prediction
-
 # Chicken-Disease-Classification--Project
 
+## Problem Statement
+
+To detect diseases in chickens at an early stage using deep learning techniques,
+preventing mortality in chickens, farmers loss due to mortality among chickens and ultimately keeping us healthy too.
+The aim of this project is
+to develop a very intelligent system for the early identification of various diseases in chickens.
+VGG16 from Keras Applications was implemented for the categorical classification of "Coccidiosis" and "Healthy." 
+
+## Demo 
+
+<div>
+    <img src="images/coccidiosis.png" alt="coccidiosis" width="400"/>
+    <img src="images/healthy.png" alt="healthy" width="400"/>
+</div>
 
 ## Workflows
 
@@ -34,7 +46,6 @@ conda create -n cnncls python=3.8 -y
 conda activate cnncls
 ```
 
-
 ### STEP 02- install the requirements
 ```bash
 pip install -r requirements.txt
@@ -51,89 +62,37 @@ Now,
 open up you local host and port
 ```
 
+### STEP 03- Export the environment variables (Linux)
+
+```bash
+export PYTHONPATH=$PYTHONPATH:/path/to/Chicken-Disease-Classification
+export AWS_ACCESS_KEY_ID=<AWS_ACCESS_KEY_ID>
+export AWS_SECRET_ACCESS_KEY=<AWS_SECRET_ACCESS_KEY>
+```
+
+### STEP 04- Run the application server
+
+```bash
+python app.py
+```
+
+### STEP 05- Train application
+
+```bash
+http://localhost:80/train
+```
+
+### STEP 06- Prediction application
+
+```bash
+http://localhost:80/predict
+```
 
 ### DVC cmd
 
 1. dvc init
 2. dvc repro
 3. dvc dag
-
-
-
-# AWS-CICD-Deployment-with-Github-Actions
-
-## 1. Login to AWS console.
-
-## 2. Create IAM user for deployment
-
-	#with specific access
-
-	1. EC2 access : It is virtual machine
-
-	2. ECR: Elastic Container registry to save your docker image in aws
-
-
-	#Description: About the deployment
-
-	1. Build docker image of the source code
-
-	2. Push your docker image to ECR
-
-	3. Launch Your EC2 
-
-	4. Pull Your image from ECR in EC2
-
-	5. Lauch your docker image in EC2
-
-	#Policy:
-
-	1. AmazonEC2ContainerRegistryFullAccess
-
-	2. AmazonEC2FullAccess
-
-	
-## 3. Create ECR repo to store/save docker image
-    - Save the URI: 566373416292.dkr.ecr.us-east-1.amazonaws.com/chicken
-
-	
-## 4. Create EC2 machine (Ubuntu) 
-
-## 5. Open EC2 and Install docker in EC2 Machine:
-	
-	
-	#optinal
-
-	sudo apt-get update -y
-
-	sudo apt-get upgrade
-	
-	#required
-
-	curl -fsSL https://get.docker.com -o get-docker.sh
-
-	sudo sh get-docker.sh
-
-	sudo usermod -aG docker ubuntu
-
-	newgrp docker
-	
-# 6. Configure EC2 as self-hosted runner:
-    setting>actions>runner>new self hosted runner> choose os> then run command one by one
-
-
-# 7. Setup github secrets:
-
-    AWS_ACCESS_KEY_ID=
-
-    AWS_SECRET_ACCESS_KEY=
-
-    AWS_REGION = us-east-1
-
-    AWS_ECR_LOGIN_URI = demo>>  566373416292.dkr.ecr.ap-south-1.amazonaws.com
-
-    ECR_REPOSITORY_NAME = simple-app
-
-
 
 
 # AZURE-CICD-Deployment-with-Github-Actions
