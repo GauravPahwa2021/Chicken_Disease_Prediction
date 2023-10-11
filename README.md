@@ -100,14 +100,6 @@ http://localhost:80/predict
 Save the password generated under Access keys in your container registry somewhere safe.
 You can only see the password after enabling Admin user in Access keys.
 
-## Run from terminal:
-
-docker build -t chickenapp.azurecr.io/chicken:latest .
-
-docker login chickenapp.azurecr.io
-
-docker push chickenapp.azurecr.io/chicken:latest
-
 
 ## Deployment Steps:
 
