@@ -25,9 +25,9 @@ stages:
 
 
   model_training:
-    cmd: python src/cnnClassifier/pipeline/stage_03_training.py
+    cmd: python src/cnnClassifier/pipeline/stage_03_model_training.py
     deps:
-      - src/cnnClassifier/pipeline/stage_03_training.py
+      - src/cnnClassifier/pipeline/stage_03_model_training.py
       - src/cnnClassifier/components/prepare_callbacks.py
       - config/config.yaml
       - artifacts/data_ingestion/Chicken-fecal-images
@@ -42,9 +42,9 @@ stages:
 
 
   model_evaluation:
-    cmd: python src/cnnClassifier/pipeline/stage_04_evaluation.py
+    cmd: python src/cnnClassifier/pipeline/stage_04_model_evaluation.py
     deps:
-      - src/cnnClassifier/pipeline/stage_04_evaluation.py
+      - src/cnnClassifier/pipeline/stage_04_model_evaluation.py
       - config/config.yaml
       - artifacts/data_ingestion/Chicken-fecal-images
       - artifacts/training/model.h5
